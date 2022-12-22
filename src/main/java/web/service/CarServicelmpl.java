@@ -8,8 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 @Service
 public class CarServicelmpl implements CarService {
-    public static List<Car> getCars(int a) {
-        List<Car>cars=new ArrayList<>();
+    private List<Car> cars = new ArrayList<>();{
         Car car1 = new Car("bmw", 3, "black");
         Car car2 = new Car("mersedess", 202, "red");
         Car car3 = new Car("vaz", 3, "white");
@@ -20,6 +19,9 @@ public class CarServicelmpl implements CarService {
         cars.add(car3);
         cars.add(car4);
         cars.add(car5);
+    }
+
+    public List<Car> getCars(int a) {
         return cars.stream().limit(a).collect(Collectors.toList());
     }
 }
